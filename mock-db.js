@@ -1,3 +1,5 @@
+"use strict";
+
 const examples = [
   { id: 1, name: "Helios" },
   { id: 2, name: "Eos" },

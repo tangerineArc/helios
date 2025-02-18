@@ -1,3 +1,5 @@
+"use strict";
+
 import asyncHandler from "express-async-handler";
 
 import * as db from "../mock-db.js";

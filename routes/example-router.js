@@ -1,3 +1,5 @@
+"use strict";
+
 import { Router } from "express";
 
 import { getExampleById } from "../controllers/example-controller.js";

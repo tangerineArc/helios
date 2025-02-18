@@ -1,3 +1,5 @@
+"use strict";
+
 import express from "express";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
