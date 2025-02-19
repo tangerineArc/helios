@@ -18,8 +18,11 @@ const app = express();
 app.set("views", join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-/* serving static assets */
+/* serve static assets */
 app.use(express.static(join(__dirname, "public")));
+
+/* parse form-data */
+app.use(express.urlencoded({ extended: true }));
 
 /* routes */
 app.use("/", indexRouter);
