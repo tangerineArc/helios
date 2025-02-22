@@ -4,8 +4,7 @@ import express from "express";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { exampleRouter } from "./routes/example-router.js";
-import { indexRouter } from "./routes/index-router.js";
+import indexRouter from "./routes/index-router.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,7 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 
 /* routes */
 app.use("/", indexRouter);
-app.use("/example", exampleRouter);
 
 /* error handler */
 app.use((err, req, res, next) => {
