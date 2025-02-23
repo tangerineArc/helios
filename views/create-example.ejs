@@ -17,15 +17,11 @@
     <%= locals.title %>
   </h1>
 
-  <ul>
-    <% locals.examples.forEach(example => { %>
-      <li>
-        <%= example.example_text %>
-      </li>
-    <% }); %>
-  </ul>
-
-  <a href="/new">Create Example</a>
+  <form action="/new" method="POST">
+    <label for="example-text">Example: </label>
+    <input type="text" name="example_text" id="example-text">
+    <button type="submit">Create</button>
+  </form>
 </body>
 
 </html>

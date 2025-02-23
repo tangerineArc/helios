@@ -1,5 +1,6 @@
 "use strict";
 
+import "dotenv/config";
 import express from "express";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,7 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 /* routes */
 app.use("/", indexRouter);
 
-/* error handler */
+/* error handlers */
+app.all("*", (req, res) => {
+  res.send("No such page: Error 404");
+});
+
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(err.statusCode || 500).send(err.message);

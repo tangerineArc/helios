@@ -2,14 +2,16 @@
 
 import { Router } from "express";
 
-import { getAllExamples } from "../controllers/index-controller.js";
+import {
+  getExamples,
+  createExampleGet,
+  createExamplePost,
+} from "../controllers/index-controller.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-  res.render("index.ejs", { title: "Helios" });
-});
-
-indexRouter.get("/example-route", getAllExamples);
+indexRouter.get("/", getExamples);
+indexRouter.get("/new", createExampleGet);
+indexRouter.post("/new", createExamplePost);
 
 export default indexRouter;
