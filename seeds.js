@@ -1,5 +1,7 @@
 #! /usr/bin/env node
 
+"use strict";
+
 import "dotenv/config";
 import pg from "pg";
 
